@@ -1,0 +1,326 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static 'javascript/search.js' %}"></script>
+    <style>
+        #container{
+            background-color: darkslategray;
+            color: white;
+            width: 100%;
+            height: 600px;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 45px;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: 20px;
+        }
+        
+        h2{
+            text-align: center;
+            font-size: 50px;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: 30px;
+            color: gold;
+            text-shadow: 0 1px goldenrod;
+        }
+
+        p{
+            text-align: center;
+            font-size: 20px;
+            font-weight: bolder;
+            color: lightyellow;
+        }
+
+        .form-inline{
+            padding-top: 30px;
+            justify-content: center;
+        }
+
+        .form-control{
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .btn-success{
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+
+        .grid1{
+            background-color: chocolate;
+            color: white;
+            width: 250px;
+            height: 180px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            margin-top: 50px;
+            margin-left: 50px;
+            
+        }
+
+        .grid1:hover{
+            box-shadow: 0 0 20px black;
+        }
+
+        .grid2{
+            background-color: seagreen;
+            color: white;
+            width: 250px;
+            height: 180px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            margin-top: 50px;
+            margin-left: 50px;
+            
+        }
+
+        .grid2:hover{
+            box-shadow: 0 0 20px black;
+        }
+
+        .grid3{
+            background-color: purple;
+            color: white;
+            width: 250px;
+            height: 180px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            margin-top: 50px;
+            margin-left: 50px;
+            
+        }
+
+        .grid3:hover{
+            box-shadow: 0 0 20px black;
+        }
+
+        .grid4{
+            background-color: palevioletred;
+            color: white;
+            width: 250px;
+            height: 180px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            margin-top: 50px;
+            margin-left: 50px;
+            
+        }
+
+        .grid4:hover{
+            box-shadow: 0 0 20px black;
+        }
+
+        .grid5{
+            background-color: rebeccapurple;
+            color: white;
+            width: 250px;
+            height: 180px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            margin-top: 50px;
+            margin-left: 50px;
+            
+        }
+
+        .grid5:hover{
+            box-shadow: 0 0 20px black;
+        }
+
+
+        .link{
+            background-color: grey;
+            width: 250px;
+            height: 50px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .icon{
+            width: 130px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .icon2{
+            width: 90px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .hyperlink{
+            color: white;
+            font-size: 25px;
+        }
+
+        .hyperlink:hover{
+            color: red;
+        }
+
+        .footer{
+            background-color: black;
+            color: white;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        h3{
+            font-size: 50px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav{
+            position: sticky;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo123.png' %}" width="120px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}"><span class="fa fa-home"></span> HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'html_home' %}"><span class="fa fa-html5"></span> HTML</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'css_home' %}"><span class="fa fa-css3"></span> CSS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'javascript_home' %}"><span class="fa fa-laptop"></span> JAVASCRIPT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'mysql_home' %}"><span class="fa fa-database"></span> MYSQL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'python_home' %}"><span class="fa fa-desktop"></span> PYTHON</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="container" style="padding-top: 200px;">
+                <h1>Let's Start Quizz</h1>
+                <p>With the world's best quiz site.</p>
+                <form class="form-inline">
+                    <input class="form-control col-md-4" type="text" name="" id="name" placeholder="Search Your Quiz Language, eg : HTML">
+                    <label id="name_error"></label>
+                    <button class="btn btn-success" onclick="return search()"><span class="fa fa-search"></span></button>
+                </form>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2>Quizz Topics</h2>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="grid1" style="margin-bottom: 50px;">
+                    <center><a href="{% url 'html_home' %}"><img src="{% static 'images/html.png' %}" class="icon"></a></center>
+                
+                    <div class="link">
+                        <center><a href="{% url 'html_home' %}" style="text-decoration: none;" class="hyperlink">Click Here <span class="fa fa-arrow-right"></span></a></center>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="grid2" style="margin-bottom: 50px;">
+                    <center><a href="{% url 'css_home' %}"><img src="{% static 'images/css.png' %}" class="icon2"></a></center>
+                
+                    <div class="link">
+                        <center><a href="{% url 'css_home' %}" style="text-decoration: none;" class="hyperlink">Click Here <span class="fa fa-arrow-right"></span></a></center>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="grid3" style="margin-bottom: 50px;">
+                    <center><a href="{% url 'javascript_home' %}"><img src="{% static 'images/javascript.png' %}" class="icon2"></a></center>
+                
+                    <div class="link">
+                        <center><a href="{% url 'javascript_home' %}" style="text-decoration: none;" class="hyperlink">Click Here <span class="fa fa-arrow-right"></span></a></center>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="grid4" style="margin-bottom: 50px;">
+                    <center><a href="{% url 'mysql_home' %}"><img src="{% static 'images/mysql.png' %}" class="icon2"></a></center>
+                
+                    <div class="link">
+                        <center><a href="{% url 'mysql_home' %}" style="text-decoration: none;" class="hyperlink">Click Here <span class="fa fa-arrow-right"></span></a></center>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="grid5" style="margin-bottom: 200px;">
+                    <center><a href="{% url 'python_home' %}"><img src="{% static 'images/python.png' %}" class="icon"></a></center>
+                
+                    <div class="link">
+                        <center><a href="{% url 'python_home' %}" style="text-decoration: none;" class="hyperlink">Click Here <span class="fa fa-arrow-right"></span></a></center>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-lg-12">
+            <div class="footer">
+                <h3>Follow Us</h3>
+                <a href="https://www.instagram.com/codemaster8848/"><img src="{% static 'images/Instagram.png' %}" style="width: 50px; margin-left: 10px;"></a> <a href="https://www.linkedin.com/in/arun-pacheeri-302480190/"><img src="{% static 'images/LinkedIn.svg' %}" style="width: 50px; margin-left: 10px;"></a> <a href="https://codemaster234.blogspot.com/"><img src="{% static 'images/Blogger.svg' %}" style="width: 50px; margin-left: 10px;"></a><br><br><br><br> 
+                <center><label for="">Developed By : Arun Pacheeri</label> <label for="">© 1996 - 2022 Code Master. All rights reserved.</label></center>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
